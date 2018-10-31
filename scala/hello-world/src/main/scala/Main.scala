@@ -22,10 +22,14 @@ object Main extends App {
   val someTitle = for (m <- regexTitlePattern.findFirstMatchIn(body)) yield m.group(1)
   val title = someTitle.get
   println(title)
+
+
+  // 3. Reverse string
+
   val reverseTitle = title.reverse
   println(reverseTitle)
 
-  // 3. Reverse string
+  // 4. Print to a file
   // Apparently scala doesn't have file i/o (that seems odd).  Everything online says to use Java
   new PrintWriter("output.txt") { write(reverseTitle); close }
 }
